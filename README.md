@@ -18,7 +18,7 @@ See: https://virtualenv.pypa.io/en/stable/
 ### To create local database (sqlite3 by default):
 #### 1. Make sure you're in directory where manage.py is located!
 #### 2. Type in your console:
-##### python manage.py makemigrations business_cards_reader_app
+##### python manage.py makemigrations business_card_reader_app
 ##### python manage.py migrate business_card_reader_app
 
 ## Running the server
