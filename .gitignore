@@ -99,3 +99,10 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+#database
+db.sqlite3
+.DS_Store
+
+#compiled bytecode of Python source files
+*.pyc
