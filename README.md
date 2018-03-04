@@ -21,6 +21,10 @@ See: https://virtualenv.pypa.io/en/stable/
 ##### python manage.py makemigrations business_cards_reader_app
 ##### python manage.py migrate business_card_reader_app
 
+## Running the server
+### Type in your console:
+#### python manage.py runserver
+
 
 ## Built With
 
