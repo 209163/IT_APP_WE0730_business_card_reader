@@ -103,11 +103,11 @@ header {
     outline: none;
 }
 .stars {
-    background:#0c005f url(../../business_card_reader_app/templates/business_card_reader_app/../../../static/img/stars.png) repeat top center;
+    background:#0c005f url(../../static/img/stars.png) repeat top center;
     z-index:0;
 }
 .twinkling{
-    background:transparent url(../../business_card_reader_app/templates/business_card_reader_app/../../../static/img/twinkling2.png) repeat top center;
+    background:transparent url(../../static/img/twinkling2.png) repeat top center;
     z-index:1;
 
     -moz-animation:move-twink-back 200s linear infinite;
