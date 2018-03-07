@@ -186,7 +186,6 @@ i.fa {
     padding-left: 30px;
 }
 .card-details p {
-    font-size: 20px;
     margin-bottom: 20px;
 }
 .card-details i {
@@ -219,6 +218,94 @@ footer {
     -webkit-box-shadow: 5px 5px 30px 0px rgba(0,0,0,0.35);
 }
 
-@media all and (max-width: 450px) {
+@media all and (max-width: 1199px) {
 
+    header {
+        height: 210px;
+}
+    header h1 {
+        padding-top: 80px;
+        font-size: 38px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .card-details p {
+        margin-bottom: 13px;
+    }
+    h2{
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .upload-section {
+        margin: 60px 0;
+    }
+    .about {
+        padding: 60px 0;
+    }
+    .inputfile + label, .infobox {
+        font-size: 16px;
+        padding: 20px 32px;
+    }
+}
+@media all and (max-width: 991px) {
+    .author-box {
+        padding: 12px 35px 25px;
+        margin-bottom: 20px;
+    }
+    .about {
+        padding: 60px 0 40px;
+    }
+    .visit-card-content {
+        max-width: 500px;
+    }
+    #results > div {
+        padding-bottom: 30px;
+    }
+    #results.active {
+        max-height: 800px;
+    }
+    .card-details {
+        padding-left: 0px;
+        padding-bottom: 50px;
+    }
+}
+@media all and (max-width: 600px) {
+    header {
+        height: auto;
+    }
+    header h1 {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        font-size: 30px;
+    }
+    .upload-section {
+        margin: 40px 0;
+    }
+    .card-details {
+        padding-bottom: 20px;
+    }
+    .infobox {
+        margin-top: 20px;
+    }
+    .about {
+        padding: 50px 0 30px;
+    }
+}
+
+@media all and (max-width: 450px) {
+    header h1 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        font-size: 26px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .about {
+        padding: 40px 0 20px;
+    }
+    .author-box {
+        padding: 7px 25px 15px;
+    }
 }
