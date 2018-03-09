@@ -217,6 +217,15 @@ footer {
     box-shadow: 5px 5px 30px 0px rgba(0,0,0,0.35);
     -webkit-box-shadow: 5px 5px 30px 0px rgba(0,0,0,0.35);
 }
+.card-item {
+    border-bottom: 2px solid #21b5df;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.card-item:last-of-type {
+    border: none;
+    margin-bottom: 50px;
+}
 
 @media all and (max-width: 1199px) {
 
@@ -269,6 +278,14 @@ footer {
         padding-left: 0px;
         padding-bottom: 50px;
     }
+    .card-item .card-details {
+        padding-bottom: 0;
+        padding-top: 30px;
+}
+    .card-item, .card-item:last-of-type {
+        margin-bottom: 35px;
+    }
+
 }
 @media all and (max-width: 600px) {
     header {
@@ -307,5 +324,12 @@ footer {
     }
     .author-box {
         padding: 7px 25px 15px;
+    }
+    .card-item, .card-item:last-of-type {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+}
+    .card-item .card-details {
+        padding-top: 20px;
     }
 }
