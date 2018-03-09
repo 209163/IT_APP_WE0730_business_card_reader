@@ -36,7 +36,6 @@ a:focus {
 a:hover {
     text-decoration: none;
     opacity: 0.7;
-    color: #92811B;
 }
 a, label, #results {
     transition: all 0.3s ease 0s;
@@ -130,6 +129,7 @@ header h1 {
     padding-top: 100px;
     font-size: 48px;
     margin:0;
+    float: left;
 }
 .upload-section {
     margin: 80px 0;
@@ -145,7 +145,7 @@ i.fa {
     position: absolute;
     z-index: -1;
 }
-.inputfile + label, .infobox {
+.inputfile + label, .infobox, .button {
     background-color: #f35454;
     padding: 20px 40px;
     color: white;
@@ -156,6 +156,14 @@ i.fa {
     cursor: pointer;
     box-shadow: 5px 5px 30px 0px rgba(0,0,0,0.35);
     -webkit-box-shadow: 5px 5px 30px 0px rgba(0,0,0,0.35);
+}
+.button {
+    position: relative;
+    z-index: 3;
+    outline: none;
+    border: none;
+    float: right;
+    margin-top: 100px;
 }
 .inputfile:focus + label,
 .inputfile + label:hover {
@@ -252,10 +260,13 @@ footer {
     .about {
         padding: 60px 0;
     }
-    .inputfile + label, .infobox {
+    .inputfile + label, .infobox, .button {
         font-size: 16px;
         padding: 20px 32px;
     }
+    .button {
+        margin-top: 75px;
+}
 }
 @media all and (max-width: 991px) {
     .author-box {
@@ -287,15 +298,23 @@ footer {
     }
 
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 767px) {
     header {
         height: auto;
     }
     header h1 {
         padding-top: 60px;
-        padding-bottom: 60px;
+        padding-bottom: 30px;
         font-size: 30px;
+        float:none;
     }
+    .button {
+        margin-top: 0;
+        float: none;
+        margin-bottom: 50px;
+    }
+}
+@media all and (max-width: 600px) {
     .upload-section {
         margin: 40px 0;
     }
@@ -313,7 +332,7 @@ footer {
 @media all and (max-width: 450px) {
     header h1 {
         padding-top: 50px;
-        padding-bottom: 50px;
+        padding-bottom: 20px;
         font-size: 26px;
     }
     h2 {
