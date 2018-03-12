@@ -21,6 +21,8 @@ See: https://virtualenv.pypa.io/en/stable/
 ##### python manage.py makemigrations business_card_reader_app
 ##### python manage.py migrate business_card_reader_app
 
+#### You should remember to repeat this steps after every change in database's structure.
+
 ## Running the server
 ### Type in your console:
 #### python manage.py runserver
