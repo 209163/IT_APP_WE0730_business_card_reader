@@ -4,8 +4,7 @@ from .models import BusinessCard
 
 
 def dashboard(request):
-    business_cards = BusinessCard.objects.order_by('surname')
-    return render(request, 'business_card_reader_app/index.html', {'business_cards' : business_cards})
+    return render(request, 'business_card_reader_app/index.html')
 
 
 def business_cards_list(request):

@@ -1,8 +1,24 @@
 {% extends 'business_card_reader_app/index.html' %}
+{% load staticfiles %}
 
 {% block content %}
+    <h2>Your cards:</h2>
     {% for card in business_cards %}
-                <h3><a href="">{{ card.company }}</a></h3>
-                <p>{{ card.name }} {{ card.surname }} {{ card.email|linebreaksbr }} </p>
+        <div class="row card-item">
+                    <div class="col-md-4">
+                        <div class="visit-card-content">
+                            <img src="{% static 'img/card.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-details">
+                            <p><b><i class="fa fa-user"></i> Name:</b> {{ card.name }} {{ card.surname }}</p>
+                            <p><b><i class="fa fa-briefcase"></i> Company:</b> {{ card.company }}</p>
+                            <p><b><i class="fa fa-phone"></i> Phone:</b> {{ card.phone_number }}</p>
+                            <p><b><i class="fa fa-envelope"></i> Email:</b> {{ card.email }}</p>
+                        </div>
+                    </div>
+        </div>
     {% endfor %}
+
 {% endblock %}
