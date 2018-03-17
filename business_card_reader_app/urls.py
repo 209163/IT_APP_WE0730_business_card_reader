@@ -1,8 +1,9 @@
-from django.urls import path
+from django.conf.urls import url
 
 from . import views
 
 urlpatterns = [
-    path('', views.dashboard),
-    path('business_cards_list.html', views.business_cards_list),
+    url(r'^$', views.card_upload, name='card_upload'),
+    url(r'^business_cards_list/$', views.business_cards_list, name='business_cards_list'),
+
 ]
