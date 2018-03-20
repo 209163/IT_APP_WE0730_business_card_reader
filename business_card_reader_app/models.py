@@ -10,9 +10,7 @@ class BusinessCard(models.Model):
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
                                  message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
     phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)  # validators should be a list
-    img_path_regex = RegexValidator(regex=r'.*\.jpg$',
-                                 message="Possible extensions: .jpg")
-    img_path = models.FilePathField(validators=[img_path_regex], max_length=50, blank=True, null=True)
+    img_path = models.FilePathField(max_length=50, blank=True, null=True)
 
     def add_card(self):
         self.save()
@@ -22,4 +20,6 @@ class BusinessCard(models.Model):
 
 
 class ImageFile(models.Model):
-    file = models.ImageField(upload_to='documents/', default='documents/')
+    img_path_regex = RegexValidator(regex=r'.*\.jpg$',
+                                    message="Possible extensions: .jpg")
+    file = models.ImageField(validators=[img_path_regex], upload_to='business_cards/', default='business_cards/')
