@@ -1,9 +1,9 @@
 from django import forms
 
-from business_card_reader_app.models import BusinessCard
+from business_card_reader_app.models import ImageFile
 
 
-class CardForm(forms.ModelForm):
+class ImageFileForm(forms.ModelForm):
     class Meta:
-        model = BusinessCard
-        fields = ('description', 'img_path', )
+        model = ImageFile
+        fields = ('file', )

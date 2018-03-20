@@ -1,7 +1,7 @@
-from django.core.files.storage import FileSystemStorage
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .models import BusinessCard
+from .templates.business_card_reader_app.forms import ImageFileForm
 
 
 def home(request):
@@ -14,12 +14,13 @@ def business_cards_list(request):
 
 
 def card_upload(request):
-    if request.method == 'POST' and request.FILES['myfile']:
-        myfile = request.FILES['myfile']
-        fs = FileSystemStorage()
-        filename = fs.save(myfile.name, myfile)
-        uploaded_file_url = fs.url(filename)
-        return render(request, 'business_card_reader_app/card_upload.html', {
-            'uploaded_file_url': uploaded_file_url
-        })
-    return render(request, 'business_card_reader_app/card_upload.html')
+    if request.method == 'POST':
+        form = ImageFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('card_upload')
+    else:
+        form = ImageFileForm()
+    return render(request, 'business_card_reader_app/card_upload.html', {
+        'form': form
+    })

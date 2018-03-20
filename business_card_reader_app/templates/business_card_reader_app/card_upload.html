@@ -3,25 +3,17 @@
 {% load staticfiles %}
 
 {% block img %}
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-{#    <input type="file" name="myfile">#}
-{#    <button type="submit">Upload</button>#}
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="upload-section">
-                <h2>Upload your business card here...</h2>
-                <input type="file" name="myfile" id="file" class="inputfile" />
-                <label for="file"><i class="fa fa-upload"></i> Choose your file</label>
-                <button type="submit">Upload</button>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="upload-section">
+                    <h2>Upload your business card here...</h2>
+                            {{ form.as_p }}
+                    <button type="submit" class="button" id="upload-button">Upload</button>
+                </div>
             </div>
         </div>
-    </div>
-  </form>
+      </form>
 
-  {% if uploaded_file_url %}
-    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
-  {% endif %}
-
-{#  <p><a href="{% url 'card_upload' %}">Return to home</a></p>#}
 {% endblock %}
