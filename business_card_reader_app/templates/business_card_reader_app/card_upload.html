@@ -1,0 +1,19 @@
+{% extends 'business_card_reader_app/base.html' %}
+
+{% load staticfiles %}
+
+{% block img %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="upload-section">
+                    <h2>Upload your business card here...</h2>
+                            {{ form.as_p }}
+                    <button type="submit" class="button" id="upload-button">Upload</button>
+                </div>
+            </div>
+        </div>
+      </form>
+
+{% endblock %}

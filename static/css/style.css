@@ -74,6 +74,14 @@ header {
     color:white;
 }
 
+header>.container>h1>a{
+    color: white;
+}
+
+header>.container>h1>a:hover{
+    opacity: 1;
+}
+
 @keyframes move-twink-back {
     from {background-position:0 0;}
     to {background-position:-10000px 5000px;}
@@ -102,11 +110,11 @@ header {
     outline: none;
 }
 .stars {
-    background:#0c005f url(../../static/img/stars.png) repeat top center;
+    background:#0c005f url(../img/stars.png) repeat top center;
     z-index:0;
 }
 .twinkling{
-    background:transparent url(../../static/img/twinkling2.png) repeat top center;
+    background:transparent url(../img/twinkling2.png) repeat top center;
     z-index:1;
 
     -moz-animation:move-twink-back 200s linear infinite;
@@ -138,12 +146,7 @@ i.fa {
     margin-right: 10px;
 }
 .inputfile {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
+
 }
 .inputfile + label, .infobox, .button {
     background-color: #f35454;
@@ -169,6 +172,13 @@ i.fa {
 .inputfile + label:hover {
     opacity: 0.8;
 }
+
+#upload-button {
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+
 .visit-card-content {
     box-shadow: 5px 5px 30px 0px rgba(0,0,0,0.35);
     -webkit-box-shadow: 5px 5px 30px 0px rgba(0,0,0,0.35);

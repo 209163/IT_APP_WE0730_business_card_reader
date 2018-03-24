@@ -31,54 +31,28 @@
 
         <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
-        <!--<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico"/>-->
+        <!--<link rel="shortcut icon" type="image/x-icon" href=q"/img/favicon.ico"/>-->
 
     </head>
     <body>
         <header>
             <div class="container">
-                <h1>Intelligent Business Card Reader</h1>
-                <a href="business_cards_list.html" class="button">View your cards</a>
+                <h1><a href="/">Intelligent Business Card Reader</a></h1>
+                <a href="{% url 'business_cards_list' %}" class="button">View your cards</a>
             </div>
             <div class="stars"></div>
             <div class="twinkling"></div>
         </header>
 
+        <!-- Uploading the image - card_upload.html -->
         <div class="app">
             <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="upload-section">
-                            <h2>Upload your business card here...</h2>
-                            <input type="file" name="file" id="file" class="inputfile" />
-                            <label for="file"><i class="fa fa-upload"></i> Choose your file</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" id="results">
-                    <div class="col-md-6">
-                        <div class="visit-card-content invisible">
-                            <img src="{% static 'img/card.jpg' %}" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-details invisible">
-                            <p><b><i class="fa fa-user"></i> Name:</b> Jan Kowalsky</p>
-                            <p><b><i class="fa fa-briefcase"></i> Company:</b> Wrocław University of Science and Technology</p>
-                            <p><b><i class="fa fa-phone"></i> Phone:</b> + 00 00 000 000</p>
-                            <p><b><i class="fa fa-envelope"></i> Email:</b> jan.kowalsky@pwr.edu.pl</p>
-                            <div class="infobox invisible">
-                                Collected data was successfully saved in the database.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% block img %}
+                {% endblock %}
             </div>
         </div>
 
-        <!-- Printing elements from database
-        We can replace 'block' below with a 'for in' from business_cards_list.html
-        and perform operations with 'invisible' class-->
+        <!-- Displaying database's content -->
         <div class="app">
             <div class="container">
                 {% block content %}
