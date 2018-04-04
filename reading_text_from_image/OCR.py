@@ -72,9 +72,9 @@ if __name__ == "__main__":
     saveImagesFromDirectory(directory)
 
     # #reads a single image
-    # path = "img/card19.png"
-    # ocr=OCR(path)
-    # imageData = ocr.textReading()
-    # print(imageData)
+    #path = "img/55-page-001.jpg"
+    #ocr=OCR(path)
+    #imageData = ocr.textReading()
+    #print(imageData)
 
 
