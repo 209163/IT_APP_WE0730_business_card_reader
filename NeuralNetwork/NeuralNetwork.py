@@ -7,18 +7,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import GridSearchCV
 from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
-import re
 import nltk
 #nltk.download('stopwords')
-
-
-# text preprocessing - removal of all html tags, emoji standarization
-def preprocessor(text):
-    text = re.sub('<[^>]*>', '', text)
-    emoticons = re.findall('(?::|;|=)(?:-)?(?:\)|\(|D|P)', text)
-    text = re.sub('[\W]+', ' ', text.lower()) + \
-           ' '.join(emoticons).replace('-', '')
-    return text
 
 
 def tokenizer(text):
