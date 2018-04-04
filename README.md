@@ -33,3 +33,14 @@ See: https://virtualenv.pypa.io/en/stable/
 * [Python]()
 * [Django]()
 
+
+## Neural Network
+
+### Prerequisites
+* pandas
+* numpy
+* sklearn
+* nltk
+
+For the first use uncomment line: nltk.download('stopwords')
+
