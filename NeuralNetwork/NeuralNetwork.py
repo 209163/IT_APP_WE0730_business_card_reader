@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
     pd.DataFrame(X)
     pd.DataFrame(y)
-    print('Etykiety klas:', np.unique(y))
+    print('Labels:', np.unique(y))
 
     print(X.shape)
     print(y.shape)
@@ -66,14 +66,14 @@ if __name__ == '__main__':
 
     lr_tfidf = Pipeline([('vect', tfidf), ('clf', LogisticRegression(random_state=0))])
 
-    gs_lr_tfidf = GridSearchCV(lr_tfidf, param_grid, scoring='accuracy', cv=5, verbose=1, n_jobs=1)
+    gs_lr_tfidf = GridSearchCV(lr_tfidf, param_grid, scoring='accuracy', cv=10, verbose=1, n_jobs=2)
 
     gs_lr_tfidf.fit(X_train, y_train)
 
-    print('Zestaw najlepszych parametrów: %s ' % gs_lr_tfidf.best_params_)
-    print('Dokładność sprawdzianu krzyżowego: %.3f' % gs_lr_tfidf.best_score_)
+    print('Best parameters: %s ' % gs_lr_tfidf.best_params_)
+    print('Cross validation precision: %.3f' % gs_lr_tfidf.best_score_)
 
     clf = gs_lr_tfidf.best_estimator_
-    print('Dokładność testu: %.3f' % clf.score(X_test, y_test))
+    print('Precision: %.3f' % clf.score(X_test, y_test))
 
 
