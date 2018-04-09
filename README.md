@@ -43,5 +43,5 @@ See: https://virtualenv.pypa.io/en/stable/
 * nltk
 * pickle
 
-To teach neural network run NeuralNetwork.py. To use neural network run test.py. In test.py is example data to show how to use network.
+To teach neural network run NeuralNetwork.py. To use neural network run test.py. In test.py is example data to show how to use network. The state of neural network is saved in classifier/classifier.pkl
 
