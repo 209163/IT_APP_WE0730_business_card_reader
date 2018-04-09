@@ -41,6 +41,7 @@ See: https://virtualenv.pypa.io/en/stable/
 * numpy
 * sklearn
 * nltk
+* pickle
 
-For the first use uncomment line: nltk.download('stopwords')
+To teach neural network run NeuralNetwork.py. To use neural network run test.py. In test.py are example data to show how to use network.
 
