@@ -2,13 +2,17 @@ import pandas as pd
 import numpy as np
 from sklearn import model_selection
 from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import GridSearchCV
 from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
 import nltk
-#nltk.download('stopwords')
+import pickle
+import os
+
+nltk.download('stopwords')
 
 
 def tokenizer(text):
@@ -27,6 +31,10 @@ if __name__ == '__main__':
     data = df.values
     X = data[:, 0]
     y = data[:, -1]
+
+    le = LabelEncoder()
+    y = le.fit_transform(y)
+    le.transform(['company', 'email', 'name', 'phone'])
 
     pd.DataFrame(X)
     pd.DataFrame(y)
@@ -76,4 +84,12 @@ if __name__ == '__main__':
     clf = gs_lr_tfidf.best_estimator_
     print('Precision: %.3f' % clf.score(X_test, y_test))
 
+    # ---- saving model for later usage ----
+
+    dest = os.path.join('classifier')
+    if not os.path.exists(dest):
+        os.makedirs(dest)
+
+    pickle.dump(stop, open(os.path.join(dest, 'stopwords.pkl'), 'wb'), protocol=4)
+    pickle.dump(clf, open(os.path.join(dest, 'classifier.pkl'), 'wb'), protocol=4)
 
